@@ -13,7 +13,7 @@ class CallApi extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
       .then(res => res.json())
       .then(
         (result) => {
@@ -47,7 +47,6 @@ class CallApi extends React.Component {
         list.push(e('li', { name: item.id }, `${item.id}: ${item.title}`));
       }
 
-      console.log("API response list: ", list);
       return e('ul', null, list);
     }
   }
