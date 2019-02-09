@@ -38,25 +38,17 @@ class CallApi extends React.Component {
     const { error, isLoaded, items } = this.state;
     if (error) {
       return e('div', null, `Error: ${error.message}`);
-      // return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return e('div', null, `Loading...`);
-      // return <div>Loading...</div>;
     } else {
 
-      return e('ul', null, `${
-        items.map(item => e('li', { key: item.id }, ``))
-        } `);
+      let list = [];
+      for (const item of items) {
+        list.push(e('li', { name: item.id }, `${item.id}: ${item.title}`));
+      }
 
-      // return (
-      //   <ul>
-      //     {items.map(item => (
-      //       <li key={item.id}>
-      //         {item.id} {item.title}
-      //       </li>
-      //     ))}
-      //   </ul>
-      // );
+      console.log("API response list: ", list);
+      return e('ul', null, list);
     }
   }
 }
