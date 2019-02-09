@@ -1,2 +1,2 @@
-# try-React
-Try React.js
+# About
+A repository for trying React.js
