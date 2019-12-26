@@ -3,12 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>React sample</title>
+  <title>時限SNS</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
-  <h1>React sample</h1>
+  <h1>時限SNS</h1>
+  <h2>Timeline</h2>
+
+  <div id="timeline"></div>
 
   <p>
     This is the first comment.
@@ -21,19 +24,23 @@
   </p>
 
   <p>
-    This is the third comment.
-    <div class="like_button_container" data-comment-id="3"></div>
-  </p>
-
-  <p>
     Menu
     <div id="menu"></div>
   </p>
 
-  <p>
-    Call API
-    <div id="call_api"></div>
-  </p>
+  <footer>
+    <small>
+      <hr>
+      <p>このページのソースコードは
+        <a href="https://github.com/zawataki/try-React">
+          こちらで公開しています
+        </a>
+      </p>
+      <p>
+        © <a href="https://github.com/zawataki">Yuki Takizawa</a>
+      </p>
+    </small>
+  </footer>
 
   <!-- Load React. -->
   <script src="https://unpkg.com/react@latest/umd/react.production.min.js"
@@ -47,7 +54,7 @@
 
   <!-- Load our React component. -->
   <script src="js/like_button.js"></script>
-  <script src="js/call-api.js"></script>
+  <script src="js/timeline.js"></script>
   <script type="text/babel" src="js/menu.js"></script>
 
 </body>

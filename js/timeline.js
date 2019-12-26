@@ -1,8 +1,6 @@
 'use strict';
 
-// let e = React.createElement;
-
-class CallApi extends React.Component {
+class TimeLine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,21 +37,22 @@ class CallApi extends React.Component {
     if (error) {
       return e('div', null, `Error: ${error.message}`);
     } else if (!isLoaded) {
-      return e('div', null, `Loading...`);
+      return e('div', null, 'Fetching...');
     } else {
 
       let list = [];
       for (const item of items) {
-        list.push(e('li', { name: item.id }, `${item.id}: ${item.title}`));
+        let article = e('article', { id: item.id }, `${item.id}: ${item.title}`);
+        list.push(article);
       }
 
-      return e('ul', null, list);
+      return list;
     }
   }
 }
 
 
 ReactDOM.render(
-  e(CallApi, {}),
-  document.getElementById('call_api')
+  e(TimeLine, {}),
+  document.getElementById('timeline')
 );
